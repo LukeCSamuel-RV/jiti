@@ -19,11 +19,8 @@ export default function transform (opts: TransformOptions): TRANSFORM_RESULT {
 
   if (opts.ts) {
     _opts.plugins!.push(require('@babel/plugin-transform-typescript'))
-
-    if (opts.decorators) {
-      // `unshift` because this plugin must come before `@babel/plugin-proposal-class-properties`
-      _opts.plugins!.unshift([require('@babel/plugin-proposal-decorators'), { legacy: true }])
-    }
+    // `unshift` because this plugin must come before `@babel/plugin-proposal-class-properties`
+    _opts.plugins!.unshift([require('@babel/plugin-proposal-decorators'), { legacy: true }])
   }
 
   if (opts.legacy) {

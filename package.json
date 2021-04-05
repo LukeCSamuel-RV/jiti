@@ -15,6 +15,7 @@
   "scripts": {
     "build": "yarn clean && NODE_ENV=production yarn webpack",
     "build:babel": "ncc build src/babel.ts -t -m -o dist/babel",
+    "build:tsc": "ncc build src/tsc.ts -t -m -o dist/tsc",
     "clean": "rm -rf dist",
     "dev": "yarn clean && yarn webpack --watch",
     "jiti": "JITI_DEBUG=1 ./bin/jiti.js",

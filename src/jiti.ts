@@ -184,7 +184,7 @@ export default function createJITI (_filename: string = process.cwd(), opts: JIT
 
     if (needsTranspile) {
       debug('[transpile]', filename)
-      source = transform({ filename, source, ts: isTypescript, decorators: tsConfig.compilerOptions.experimentalDecorators })
+      source = transform({ filename, source, ts: isTypescript, tsConfig })
     } else {
       try {
         debug('[native]', filename)
@@ -192,7 +192,7 @@ export default function createJITI (_filename: string = process.cwd(), opts: JIT
       } catch (err) {
         debug('Native require error:', err)
         debug('[fallback]', filename)
-        source = transform({ filename, source, ts: isTypescript, decorators: tsConfig.compilerOptions.experimentalDecorators })
+        source = transform({ filename, source, ts: isTypescript, tsConfig })
       }
     }
 

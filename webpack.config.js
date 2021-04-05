@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     jiti: './src/jiti.ts',
     babel: './src/babel.ts',
+    tsc: './src/tsc.ts',
     v8cache: 'v8-compile-cache'
   },
   devtool: false,
